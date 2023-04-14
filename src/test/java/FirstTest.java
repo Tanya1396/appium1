@@ -1,37 +1,13 @@
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class FirstTest {
-    public long DEFAULT_TIMEOUT = 5;
-    public long LONG_TIMEOUT = 10;
-
-    public AndroidDriver<?> driver;
-
-    @BeforeAll
-    void setUp() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("paltformName", "Android");
-        capabilities.setCapability("appPackage", "org.wikipedia");
-        capabilities.setCapability("appActivity", "main.MainActivity");
-        capabilities.setCapability("automationName", "UiAutomator2");
-
-        String AppiumURL = "http://0.0.0.0:4723/wd/hub";
-        driver = new AndroidDriver<>(new URL(AppiumURL), capabilities);
-    }
-
-    @AfterAll
-    public void tearDown() {
-        driver.quit();
-    }
+public class FirstTest extends CoreTestCase{
+    long DEFAULT_TIMEOUT = 5;
+    long LONG_TIMEOUT = 10;
 
     @Test
     void firstTest() throws InterruptedException {
