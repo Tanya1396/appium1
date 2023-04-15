@@ -1,5 +1,9 @@
+package wiki;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import pages.MainPage;
+import pages.SearchPage;
 
 public class SearchPageTests extends CoreTestCase {
 
@@ -7,10 +11,10 @@ public class SearchPageTests extends CoreTestCase {
 
     @Test
     void sendKeysRefactored() {
-        mainPage.waitForElementAndClick(MainPage.skipButton);
-        mainPage.waitForElementAndClick(SearchPage.searchId, MainPage.LONG_TIMEOUT);
-        mainPage.waitForElementAndSendKeys(SearchPage.searchFieldId, "appium", MainPage.LONG_TIMEOUT);
-        mainPage.waitForElementAndClick(SearchPage.appiumDescriptionId, MainPage.LONG_TIMEOUT);
+        CoreTestCase.mainPage.waitForElementAndClick(MainPage.skipButton);
+        CoreTestCase.mainPage.waitForElementAndClick(SearchPage.searchId, MainPage.LONG_TIMEOUT);
+        CoreTestCase.mainPage.waitForElementAndSendKeys(SearchPage.searchFieldId, "appium", MainPage.LONG_TIMEOUT);
+        CoreTestCase.mainPage.waitForElementAndClick(SearchPage.appiumDescriptionId, MainPage.LONG_TIMEOUT);
     }
 
     @Test
@@ -24,5 +28,9 @@ public class SearchPageTests extends CoreTestCase {
         Assertions.assertTrue(searchPage.isHaveDescription(SearchPage.searchDescItem, "Mobile payment service developed by Block, Inc."));
     }
 
+    @Test
+    void name() {
+
+    }
 }
 

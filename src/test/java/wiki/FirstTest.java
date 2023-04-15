@@ -1,3 +1,5 @@
+package wiki;
+
 import io.appium.java_client.android.AndroidElement;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -5,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class FirstTest extends CoreTestCase{
+public class FirstTest extends CoreTestCase {
     long DEFAULT_TIMEOUT = 5;
     long LONG_TIMEOUT = 10;
 

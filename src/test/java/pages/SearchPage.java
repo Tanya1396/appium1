@@ -1,6 +1,8 @@
-import com.sun.org.apache.xpath.internal.operations.And;
+package pages;
+
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -34,6 +36,7 @@ public class SearchPage extends MainPage {
         return "new UiSelector().resourceId(\"org.wikipedia:id/page_list_item_title\")";
     }
 
+    @Step("Свайпаем вниз чтобы найти элемент c текстом {text}")
     public void swipeUpListUntilFind(List<AndroidElement> elements, String text, int maxSwipes, int timeOfSwipe, String selectorToItem) {
         int alreadySwipe = 0;
 //        List<AndroidElement> elements = (List<AndroidElement>) driver.findElement(pathToElements);
@@ -48,6 +51,7 @@ public class SearchPage extends MainPage {
 
     }
 
+    @Step("проверка наличия описания {expectedText} у элементов")
     public boolean isHaveDescription(List<AndroidElement> descriptions, String expectedText){
         return descriptions.stream().anyMatch(desc -> desc.getText().contains(expectedText));
     }

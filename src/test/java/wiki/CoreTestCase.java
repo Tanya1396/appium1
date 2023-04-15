@@ -1,7 +1,10 @@
+package wiki;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.MainPage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
